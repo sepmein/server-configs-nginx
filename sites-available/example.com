@@ -22,7 +22,7 @@ server {
   server_name example.com;
 
   # Path for static files
-  root /var/www/example/public;
+  root /var/www/example;
 
   #Specify a charset
   charset utf-8;
