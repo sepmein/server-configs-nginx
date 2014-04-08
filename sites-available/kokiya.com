@@ -46,3 +46,21 @@ server {
       proxy_pass         http://127.0.0.1:2368;
   }
 }
+
+server {
+  listen 80;
+
+  server_name 4.kokiya.com;
+
+  # Path for static files
+  root /var/www/kokiya/4;
+
+  #Specify a charset
+  charset utf-8;
+
+  # Custom 404 page
+  error_page 404 /404.html;
+
+  # Include the basic h5bp config set
+  include h5bp/basic.conf;
+}
