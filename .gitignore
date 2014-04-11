@@ -1,0 +1,7 @@
+conf.d
+fastcgi_params
+koi-utf
+koi-win
+scgi_params
+uwsgi_params
+win-utf

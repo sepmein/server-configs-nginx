@@ -4,17 +4,27 @@
 # the right one -- http://wiki.nginx.org/Pitfalls#Server_Name
 
 server {
+  # don't forget to tell on which port this server listens
+  listen 80;
+
+  # listen on the www host
+  server_name www.gtimi.com;
+
+  # and redirect to the non-www host (declared below)
+  return 301 $scheme://gtimi.com$request_uri;
+}
+
+server {
   # listen 80 deferred; # for Linux
   # listen 80 accept_filter=httpready; # for FreeBSD
   listen 80;
 
   # The host name to respond to
-  server_name localhost;
+  server_name gtimi.com;
 
   # Path for static files
-  root /usr/share/nginx/html;
-  index index.html
-  
+  root /var/www/gtimi;
+
   #Specify a charset
   charset utf-8;
 
