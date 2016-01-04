@@ -18,7 +18,7 @@ Apply to the runtime config file:
 
     // /etc/nginx/nginx.conf
 	#user www www;
-	user www-data-www-data;
+	user www-data www-data;
 
 ## Configure logs and pid file
 
@@ -67,3 +67,20 @@ Activate the new site by linking `yourdomainname.com` into the `sites-enabled` d
 This will make the server active the next time nginx (re)starts.
 
 ## Verify config and restart nginx
+Verify the config and restart nginx to apply the changes.
+
+To verify nginx config (Tests default nginx config file)
+
+	nginx -t 
+
+**OR**
+
+To verify a particular nginx config file
+	
+	nginx -t -c nginx.conf	
+	
+This will test the nginx config file and throws error if any. Otherwise test is successful and you can restart nginx.
+
+Finally reload nginx to apply the changes.
+	
+	/etc/init.d/nginx reload
