@@ -20,4 +20,4 @@ ansible:
 clean:
 	rm -r dist
 
-release: test copy ansible clean
+release: clean copy ansible clean
