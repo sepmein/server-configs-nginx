@@ -26,7 +26,7 @@ server {
   server_name sepmein.com;
 
   # Path for static files
-  root /sites/sepmein.com/public;
+  root /var/www/html/sepmein.com;
 
   # Specify a charset
   charset utf-8;
