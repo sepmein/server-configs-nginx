@@ -5,3 +5,5 @@ koi-win
 scgi_params
 uwsgi_params
 win-utf
+# dist folder
+dist

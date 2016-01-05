@@ -1,5 +1,9 @@
 ---
 - hosts: do
 	tasks:
+    - name: remove old nginx config file
+      shell: mv /etc/nginx /etc/nginx-old
 	- name: copy nginx config to server
-	  copy: /
+	  copy: ./dist /etc/nginx
+    - name: restart nginx server
+      shell: nginx -s restart
