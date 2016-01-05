@@ -4,7 +4,7 @@
     - name: move old nginx config
       command: /bin/mv /etc/nginx /etc/nginx-old
     - name: copy new nginx config
-      copy: src=./dist/ dest=/etc/nginx owner=www-data group=www-data
+      copy: src=./dist/ dest=/etc/nginx owner=www-data group=www-data backup=yes
       notify:
       - restart nginx
     - name: ensure nginx is running
