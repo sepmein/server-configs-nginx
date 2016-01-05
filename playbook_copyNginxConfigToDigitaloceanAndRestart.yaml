@@ -11,4 +11,4 @@
       service: name=nginx state=started enabled=yes
   handlers:
     - name: restart nginx
-      command: /usr/sbin/nginx -s restart
+      command: /usr/sbin/nginx -s reload
