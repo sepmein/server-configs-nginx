@@ -1,8 +1,8 @@
 ---
 - hosts: do
   tasks:
-    - name: move old nginx config
-      command: /bin/mv /etc/nginx /etc/nginx-old
+    - name: remove old nginx config
+      command: /bin/rm -r /etc/nginx
     - name: copy new nginx config
       copy: src=./dist/ dest=/etc/nginx owner=www-data group=www-data backup=yes
       notify:
